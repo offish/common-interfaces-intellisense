@@ -12,7 +12,7 @@ class BuildInterfaces:
         return [i for i in self.packages_path.glob("*_*")]
 
     def get_output_folder(self, package_name: str) -> pathlib.Path:
-        return self.base_path / "src" / package_name
+        return self.base_path / "src" / package_name / "msg"
 
     def delete_built_files(self) -> None:
         path = self.base_path / "src"
@@ -25,9 +25,12 @@ class BuildInterfaces:
             if i.name in ["common_interfaces", "base_types", "builtin_interfaces"]:
                 continue
 
-            for file in i.glob("*.py"):
+            msg_folder = i / "msg"
+
+            for file in msg_folder.glob("*.py"):
                 file.unlink()
 
+            msg_folder.rmdir()
             i.rmdir()
 
     def build(self) -> None:

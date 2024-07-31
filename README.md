@@ -11,8 +11,8 @@ pip install common-interfaces-intellisense
 
 ## Usage
 ```python
-from geometry_msgs import Quaternion
-from std_msgs import String
+from geometry_msgs.msg import Quaternion
+from std_msgs.msg import String
 
 # will now get intellisense
 msg = Quaternion()
@@ -23,12 +23,12 @@ msg = String(data="my string")
 
 Here is an example of a generated class:
 
-[`sensor_msgs/CameraInfo.py`](/src/sensor_msgs/CameraInfo.py)
+[`sensor_msgs/msg/CameraInfo.py`](/src/sensor_msgs/msg/CameraInfo.py)
 
 ```python
 # flake8: noqa
-from ..common_interfaces.base_types import *
-from ..std_msgs import Header
+from common_interfaces.base_types import *
+from std_msgs.msg import Header
 from . import RegionOfInterest
 
 from typing import Any

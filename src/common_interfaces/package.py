@@ -71,8 +71,3 @@ class Package:
             self.write_init()
 
         self.write_init()
-
-
-if __name__ == "__main__":
-    test = Package(pathlib.Path("./std_msgs"), ["String", "Byte", "Bool", "Int32"])
-    test.build()

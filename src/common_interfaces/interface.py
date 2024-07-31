@@ -88,7 +88,7 @@ class Interface:
             if not interface:
                 interface = import_interface
 
-            imports += f"from ..{package} import {interface}\n"
+            imports += f"from {package}.msg import {interface}\n"
         else:
             if interface not in __all__ + ["bool"]:
                 imports += f"from . import {interface}\n"
@@ -153,6 +153,6 @@ class Interface:
         parent = self.path.parent
 
         if not parent.exists():
-            parent.mkdir()
+            parent.mkdir(parents=True)
 
         self.path.write_text(code, "utf-8")
