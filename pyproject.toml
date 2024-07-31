@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "common-interfaces-intellisense"
+authors = [
+  { name="offish", email="overutilization@gmail.com" },
+]
+description = "Get intellisense for ROS 2 interfaces"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = []
+dynamic = ["version"]
+
+[project.urls]
+"Homepage" = "https://github.com/offish/common-interfaces-intellisense"
+"Bug Tracker" = "https://github.com/offish/common-interfaces-intellisense/issues"
+
+[tool.setuptools_scm]
